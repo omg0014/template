@@ -1,0 +1,75 @@
+/* Luxury Cinematic — template-specific styles (tokens come from the cafe config via CSS vars). */
+[data-template='luxury'] {
+  --c-focus: var(--c-accent-soft);
+}
+
+.lux-outline {
+  color: transparent;
+  -webkit-text-stroke: 1px color-mix(in srgb, var(--c-accent) 70%, transparent);
+}
+
+.lux-gold {
+  background: linear-gradient(100deg, #b98e47 0%, #f0d9a6 40%, #c9a35b 60%, #8c6a33 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.lux-leader {
+  flex: 1 1 auto;
+  min-width: 1.5rem;
+  margin: 0 0.75rem;
+  border-bottom: 1px dotted color-mix(in srgb, var(--c-accent) 50%, transparent);
+  transform: translateY(-0.35em);
+}
+
+.lux-label {
+  position: relative;
+  border: 1px solid color-mix(in srgb, var(--c-accent) 45%, transparent);
+  background: rgba(11, 9, 7, 0.72);
+  color: var(--c-accent-soft);
+  backdrop-filter: blur(6px);
+  padding: 0.35rem 0.8rem;
+  font: 500 10px/1 var(--f-body);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+.lux-label[data-side]::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 28px;
+  height: 1px;
+  background: color-mix(in srgb, var(--c-accent) 60%, transparent);
+}
+.lux-label[data-side='right']::before { right: 100%; }
+.lux-label[data-side='left']::before { left: 100%; }
+@media (min-width: 768px) {
+  .lux-label { font-size: 11px; }
+}
+
+.lux-vignette {
+  background: radial-gradient(ellipse at center, transparent 30%, rgba(0, 0, 0, 0.55) 100%);
+}
+
+.lux-scroll-line {
+  animation: lux-scroll 2.4s cubic-bezier(0.76, 0, 0.24, 1) infinite;
+}
+@keyframes lux-scroll {
+  0% { transform: scaleY(0); transform-origin: top; }
+  45% { transform: scaleY(1); transform-origin: top; }
+  55% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+.lux-map iframe {
+  filter: invert(92%) hue-rotate(180deg) grayscale(0.75) contrast(0.92) brightness(0.9);
+}
+
+.lux-reviews .swiper-slide { opacity: 0 !important; transition-property: opacity; }
+.lux-reviews .swiper-slide-active { opacity: 1 !important; }
+
+/* Cormorant defaults to old-style figures ("01" reads as "OI") — use lining numerals for numbers & prices. */
+[data-template='luxury'] .font-display {
+  font-variant-numeric: lining-nums proportional-nums;
+}

@@ -1,0 +1,24 @@
+/* Modern Minimal — template-specific styles. */
+[data-template='minimal'] {
+  --c-focus: var(--c-accent);
+}
+.min-label {
+  border: 1px solid var(--c-line);
+  background: rgba(255, 253, 249, 0.92);
+  color: var(--c-ink);
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  font: 500 12px/1 var(--f-body);
+  box-shadow: 0 8px 24px -12px rgba(43, 33, 26, 0.35);
+}
+.min-map iframe {
+  filter: grayscale(1) sepia(0.18) contrast(0.95) brightness(1.02);
+}
+.min-hairline {
+  background-image: linear-gradient(var(--c-line), var(--c-line));
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+.min-reviews .swiper { overflow: visible; }
+.min-reviews .swiper-slide { height: auto; }

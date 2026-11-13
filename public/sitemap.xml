@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Replace https://example.com with the deployed Render URL or the client's custom domain. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://example.com/</loc><priority>1.0</priority></url>
+  <url><loc>https://example.com/luxury</loc><priority>0.8</priority></url>
+  <url><loc>https://example.com/minimal</loc><priority>0.8</priority></url>
+  <url><loc>https://example.com/colorful</loc><priority>0.8</priority></url>
+</urlset>
